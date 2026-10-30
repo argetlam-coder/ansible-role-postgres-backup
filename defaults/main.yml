@@ -25,6 +25,12 @@ postgres_backup_data_path: "{{ postgres_backup_base_path }}/data"
 postgres_backup_uid: ~
 postgres_backup_gid: ~
 
+# Controls the user that the container runs as. Set to `0` to run as root.
+postgres_backup_container_uid: "{{ postgres_backup_uid }}"
+
+# Controls the group that the container runs as. Set to `0` to run as root.
+postgres_backup_container_gid: "{{ postgres_backup_gid }}"
+
 # postgres_backup_container_image_distro controls whether we use Alpine-based images (`-alpine`) or the normal Debian-based images.
 # Alpine-based Postgres images are smaller and we usually prefer them, but they don't work on ARM32 (tested on a Raspberry Pi 3 running Raspbian 10.7).
 # On ARM32, `-alpine` images fail with the following error:

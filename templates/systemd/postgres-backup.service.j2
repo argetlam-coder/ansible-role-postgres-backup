@@ -24,7 +24,7 @@ ExecStartPre={{ devture_systemd_docker_base_host_command_docker }} create \
       --rm \
       --name={{ postgres_backup_identifier }} \
       --log-driver=none \
-      --user={{ postgres_backup_uid }}:{{ postgres_backup_gid }} \
+      --user={{ postgres_backup_container_uid }}:{{ postgres_backup_container_gid }} \
       --cap-drop=ALL \
       --read-only \
       --network={{ postgres_backup_container_network }} \
